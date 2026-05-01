@@ -2,8 +2,8 @@
 Tento repozitář obsahuje souboru k návrhu SPI Flash programátoru.
 
 ## Struktura
-Výrobní soubory jsou v adresáři: programator_spi/production/programator_spi.zip
-Schéma je dostupné v adresáři: programator_spi/schema_pdf/programator_spi.pdf
+- Výrobní soubory jsou v adresáři: programator_spi/production/programator_spi.zip
+- Schéma je dostupné v adresáři: programator_spi/schema_pdf/programator_spi.pdf
 # Návrhová rozhodnutí
 
 ## Patice pro DIP8
