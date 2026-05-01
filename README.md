@@ -40,7 +40,7 @@ Pro indikaci stavu jsem zvolil adresovatelnou LED, která funguje s 5V logikou. 
 
 K napájení jsem přidal 100 nF kondenzátor, SPI jsem připojil k MCU, /WP a /HOLD jsem vyvedl na VDD, protože ani jednu z funkcí nepotřebuji. Na piny sdílené s MCU jsem přidal ESD ochranu.
 
-# Test pady
+## Test pady
 Přidávám testpady s dírou uprostřed, protože v nich líp drží probe osciloskopu a ve dvouvrstvé desce ničemu nevadí.
 
 *Text Návrhová rozhodnutí byl upravenu pomocí generativní umělé inteligence, originál je dostupný v: original_notes/notes.txt*
