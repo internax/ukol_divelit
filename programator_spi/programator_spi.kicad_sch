@@ -2928,7 +2928,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "72d5abac-1e95-434a-903d-c5f5f5ada8bf")
+			(uuid "72d5abac-1e95-434a-903d-c5f5f5ada8c0")
 		)
 		(instances
 			(project "programator_spi"
@@ -3628,7 +3628,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "untitled.kicad_sch"
+		(property "Sheetfile" "mcu.kicad_sch"
 			(at 119.38 114.8846 0)
 			(effects
 				(font
