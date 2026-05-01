@@ -39,3 +39,6 @@ Pro indikaci stavu jsem zvolil adresovatelnou LED, která funguje s 5V logikou. 
 ## Flash
 
 K napájení jsem přidal 100 nF kondenzátor, SPI jsem připojil k MCU, /WP a /HOLD jsem vyvedl na VDD, protože ani jednu z funkcí nepotřebuji. Na piny sdílené s MCU jsem přidal ESD ochranu.
+
+# Test pady
+Přidávám testpady s dírou uprostřed, protože v nich líp drží probe osciloskopu a ve dvouvrstvé desce ničemu nevadí.
