@@ -1,0 +1,31 @@
+- Použiji doporučený čip s USB rozhraním, protože jej nativně podporuje
+- Chtěl jsem použít ZFI socket,a le pro pDIP8 se moc nevyrábí takže použiju něco jiného s důrazem na to aby sto vyrželo opakované vysouvání a zasouvání čipů
+- Existují přesné patice, které by tohle měly zaručit
+- Vybírám patci ze zadání protože má nízký odpor kontaktů a zalté pokovení. Má životnost cca 500 cyklů [DIP IC Sockets](https://www.petervis.com/electronics/DIP_IC_Sockets/IC_Sockets.html) pokud by bylo potřeba víc musle by se použít větší ZIF
+- Zbytek komponent jsem taky použil z doporučených
+# USB
+- Prvně navrhuji USB interface. Použiju ESD ze zadání. Pokud bych neměl doporučené komponenty,  bych zvažoval použití **ECMF02-2AMX6** která má common mode ochranu a je použita například v MB1801 u USB interface.
+- Přidám produovou ochranu - polyfuse
+	musím si určit max porud:
+	- Paměť má největši spotřebu při zápisu - 30 mA
+	- STM zvládne dle datasheetu 150 mA
+	Takže polyfuse 200 mA by mohla být ok, kdyžtak se vymění
+- dle specifikace přidávám 1k5 odpor na dp
+# MCU
+- S stm jsem nikdy nenavrhoval takže si stáhu AN a jedu podle ní. Jako první řeším napájení. 
+	připojím decoupling kapacitory tam kam patří. odděelní napájení analogové části neřeším, protože to tady nemá cenu
+- vybírám krystal na 8 MHz tak aby by splněn margin a navrhuji kondenzátory s tím že Cp beru jako 5pF
+- Počítám si margin podle AN2867 a zjišťuji že je oka a mám dostatečnou rezervu gm=26,4 mA/V
+# debug
+- pokračuji, programovacím rozhraním. Volím rozhraní swo konektor tag connect
+# Tlačítka
+- potřebuji tlačítko pro reset, uvažuji nad tlačítkem erase a flash ale není zmíněno v zadání tak nebudu zbytečně přidávat komplexitu
+- tlačítko reset přidávám protože je vhodné ho mít vyvedené a boot pro změnu bootovacího režimu např z usb
+# Indikace
+Pro indikaci stavu jsem vybral adresovatelnoou diodu, která funguje s 5V logikou, teoreticky by měl být level shifter, nicméně v praxi funguje dobře zeména na malé vzdálenosti i bez level shifteru.
+
+# Flash
+zbývá připojit flash paměť. k napájení přidám 100nF, připojím spi do čipu a WP a hold na vdd, protože ani jednu z funkcí nepotřebuji, přidám esd ochranu na piny které jsou spojeny s MCU
+
+# Test pady
+Přidávám testpady s dírou uprostřed, protože v nich líp drří probe osciloskopu a ve dvouvrstvé desce ničemu nevadí
